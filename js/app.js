@@ -6,7 +6,6 @@
 
   const CFG = window.PERALTA_CONFIG || {};
   const PRODUCTS = window.PRODUCTS || [];
-  const CAT_IMAGES = window.CAT_IMAGES || {};
 
   const $ = (sel, ctx) => (ctx || document).querySelector(sel);
   const $$ = (sel, ctx) => [...(ctx || document).querySelectorAll(sel)];
@@ -149,92 +148,7 @@
   heroBottles.innerHTML = heroPicks.map(p =>
     `<img src="${p.image}" alt="${esc(p.name)}" width="320" height="320" fetchpriority="high">`).join('');
 
-  /* ---------- categorías ---------- */
-  const CATS = [
-    { key: 'mujer', title: 'Perfumes para Mujer', desc: 'Delicados, dulces y florales.', filter: { gender: 'mujer' } },
-    { key: 'hombre', title: 'Perfumes para Hombre', desc: 'Sobrios, amaderados, con carácter.', filter: { gender: 'hombre' } },
-    { key: 'arabe', title: 'Perfumes Árabes', desc: 'Intensos, duraderos y memorables.', filter: { category: 'arabe' } },
-    { key: 'disenador', title: 'Perfumes de Diseñador', desc: 'Las casas clásicas de siempre.', filter: { category: 'disenador' } },
-    { key: 'vendidos', title: 'Más Vendidos', desc: 'Los favoritos de la casa.', filter: { special: 'feat' } },
-    { key: 'novedades', title: 'Novedades', desc: 'Colección Capadocia · Oct 2025.', filter: { special: 'nuevo' } },
-  ];
-  $('#catsGrid').innerHTML = CATS.map(c => {
-    const im = CAT_IMAGES[c.key];
-    return `
-    <a class="cat-card js-goto-catalog" href="#catalogo"
-       ${c.filter.gender ? `data-gender="${c.filter.gender}"` : ''}
-       ${c.filter.category ? `data-category="${c.filter.category}"` : ''}
-       ${c.filter.special ? `data-special="${c.filter.special}"` : ''}>
-      <span class="cat-card__media">${im ? `<img src="${im.image}" alt="${esc(im.alt)}" loading="lazy" width="300" height="300">` : BOTTLE_PLACEHOLDER}</span>
-      <span class="cat-card__body">
-        <h3>${c.title}</h3>
-        <p>${c.desc}</p>
-        <span class="cat-card__link">Explorar
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
-      </span>
-    </a>`;
-  }).join('');
-
-  /* ---------- destacados ---------- */
-  renderInto($('#featGrid'), PRODUCTS.filter(p => p.feat).sort((a, b) => a.feat - b.feat).slice(0, 8));
-
-  /* ---------- secciones mujer / hombre (chips de familia) ---------- */
-  function gsection(gender, chipsEl, gridEl) {
-    const base = PRODUCTS.filter(p => p.gender === gender);
-    const fams = [...new Set(base.flatMap(p => p.families))].sort((a, b) => a.localeCompare(b));
-    const chips = ['todos', ...fams];
-    chipsEl.innerHTML = chips.map((f, i) =>
-      `<button class="chip${i === 0 ? ' is-active' : ''}" data-fam="${f}" aria-pressed="${i === 0}">${cap(f)}</button>`).join('');
-    const paint = fam => {
-      const items = fam === 'todos' ? base : base.filter(p => p.families.includes(fam));
-      renderInto(gridEl, items.slice(0, 8));
-    };
-    chipsEl.addEventListener('click', e => {
-      const b = e.target.closest('.chip'); if (!b) return;
-      $$('.chip', chipsEl).forEach(c => { c.classList.toggle('is-active', c === b); c.setAttribute('aria-pressed', String(c === b)); });
-      paint(b.dataset.fam);
-    });
-    paint('todos');
-  }
-  gsection('mujer', $('#womenChips'), $('#womenGrid'));
-  gsection('hombre', $('#menChips'), $('#menGrid'));
-
-  /* ---------- árabes / diseñador ---------- */
-  renderInto($('#arabGrid'), PRODUCTS.filter(p => p.category === 'arabe' && p.image && p.priceDetal).slice(0, 8));
-  renderInto($('#designerGrid'), PRODUCTS.filter(p => p.category === 'disenador' && p.image).slice(0, 8));
-
-  /* ---------- personalidad (agrupaciones de familias del catálogo) ---------- */
-  const MOODS = [
-    { label: 'Dulce', fams: ['dulce', 'vainilla', 'gourmand'], icon: '<path d="M12 3c-4 0-7 3-7 7 0 5 7 11 7 11s7-6 7-11c0-4-3-7-7-7Z"/><path d="M9 10h6"/>' },
-    { label: 'Floral', fams: ['floral'], icon: '<circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>' },
-    { label: 'Intenso', fams: ['especiado', 'cuero', 'ámbar'], icon: '<path d="M12 3s5 5.2 5 10a5 5 0 0 1-10 0c0-4.8 5-10 5-10Z"/><path d="M12 21v-4"/>' },
-    { label: 'Fresco', fams: ['fresco', 'acuático', 'verde', 'ozónico'], icon: '<path d="M3 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M3 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M3 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>' },
-    { label: 'Amaderado', fams: ['amaderado'], icon: '<path d="M12 21V9"/><path d="M12 9c-3 0-5-2.5-5-5 3 0 5 2 5 5Zm0 0c3 0 5-2.5 5-5-3 0-5 2-5 5Z"/><path d="M12 15c-2.5 0-4.5-2-4.5-4.5 2.5 0 4.5 2 4.5 4.5Zm0 0c2.5 0 4.5-2 4.5-4.5-2.5 0-4.5 2-4.5 4.5Z"/>' },
-    { label: 'Cítrico', fams: ['cítrico'], icon: '<circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16M6.5 6.5l11 11M17.5 6.5l-11 11"/>' },
-    { label: 'Oriental', fams: ['oriental', 'almizcle', 'anís'], icon: '<path d="M20 12A8 8 0 1 1 12 4a6.5 6.5 0 1 0 8 8Z"/><path d="m17 5 .6 1.6L19 7l-1.4.5L17 9l-.5-1.5L15 7l1.5-.4L17 5Z"/>' },
-    { label: 'Elegante', fams: ['aromático', 'fougère'], icon: '<path d="M6 3h12l2 5-8 13L4 8l2-5Z"/><path d="M4 8h16M9.5 8 12 21 14.5 8M9.5 8 12 3l2.5 5"/>' },
-  ];
-  const moodGrid = $('#moodGrid');
-  moodGrid.innerHTML = MOODS.map((m, i) =>
-    `<button class="mood" data-i="${i}" aria-pressed="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${m.icon}</svg>
-      ${m.label}
-    </button>`).join('');
-  const moodResults = $('#moodResults');
-  moodGrid.addEventListener('click', e => {
-    const b = e.target.closest('.mood'); if (!b) return;
-    const active = b.classList.contains('is-active');
-    $$('.mood', moodGrid).forEach(x => { x.classList.remove('is-active'); x.setAttribute('aria-pressed', 'false'); });
-    if (active) { moodResults.innerHTML = ''; return; }
-    b.classList.add('is-active'); b.setAttribute('aria-pressed', 'true');
-    const m = MOODS[+b.dataset.i];
-    const items = PRODUCTS.filter(p => p.families.some(f => m.fams.includes(f)));
-    renderInto(moodResults, items.slice(0, 8));
-    moodResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
-
-  /* ---------- catálogo completo ---------- */
+  /* ---------- catálogo único ---------- */
   const state = { q: '', gender: '', category: '', special: '', brand: '', family: '', size: '', sort: 'featured', shown: 12 };
   const PAGE = 12;
 
@@ -254,6 +168,19 @@
   const categoryChips = $('#categoryChips');
   categoryChips.innerHTML = [['', '', 'Todas'], ['arabe', '', 'Árabes'], ['disenador', '', 'Diseñador'], ['', 'feat', 'Más vendidos'], ['', 'nuevo', 'Novedades']]
     .map(([c, s, l], i) => `<button type="button" class="chip${i === 0 ? ' is-active' : ''}" data-c="${c}" data-s="${s}" aria-pressed="${i === 0}">${l}</button>`).join('');
+
+  // chips visibles de familia olfativa (las más frecuentes del catálogo)
+  const familyChips = $('#familyChips');
+  const famCounts = {};
+  PRODUCTS.forEach(p => p.families.forEach(f => famCounts[f] = (famCounts[f] || 0) + 1));
+  const mainFams = Object.keys(famCounts).filter(f => famCounts[f] >= 4).sort((a, b) => a.localeCompare(b));
+  familyChips.innerHTML = ['', ...mainFams].map((f, i) =>
+    `<button type="button" class="chip${i === 0 ? ' is-active' : ''}" data-f="${f}" aria-pressed="${i === 0}">${f ? cap(f) : 'Todos'}</button>`).join('');
+  const syncFamilyChips = () => $$('.chip', familyChips).forEach(c => {
+    const on = c.dataset.f === state.family;
+    c.classList.toggle('is-active', on);
+    c.setAttribute('aria-pressed', String(on));
+  });
 
   function applyFilters() {
     let items = PRODUCTS.slice();
@@ -307,8 +234,15 @@
     $$('.chip', categoryChips).forEach(c => { c.classList.toggle('is-active', c === b); c.setAttribute('aria-pressed', String(c === b)); });
     renderCatalog();
   });
+  familyChips.addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    state.family = b.dataset.f; state.shown = PAGE;
+    familySelect.value = state.family;
+    syncFamilyChips();
+    renderCatalog();
+  });
   brandSelect.addEventListener('change', () => { state.brand = brandSelect.value; state.shown = PAGE; renderCatalog(); });
-  familySelect.addEventListener('change', () => { state.family = familySelect.value; state.shown = PAGE; renderCatalog(); });
+  familySelect.addEventListener('change', () => { state.family = familySelect.value; state.shown = PAGE; syncFamilyChips(); renderCatalog(); });
   sizeSelect.addEventListener('change', () => { state.size = sizeSelect.value; state.shown = PAGE; renderCatalog(); });
   $('#sortSelect').addEventListener('change', e => { state.sort = e.target.value; renderCatalog(); });
   loadMore.addEventListener('click', () => { state.shown += PAGE; renderCatalog(); });
@@ -318,6 +252,7 @@
     $('#searchInput').value = ''; brandSelect.value = ''; familySelect.value = ''; sizeSelect.value = ''; $('#sortSelect').value = 'featured';
     $$('.chip', genderChips).forEach((c, i) => { c.classList.toggle('is-active', i === 0); c.setAttribute('aria-pressed', String(i === 0)); });
     $$('.chip', categoryChips).forEach((c, i) => { c.classList.toggle('is-active', i === 0); c.setAttribute('aria-pressed', String(i === 0)); });
+    syncFamilyChips();
     renderCatalog();
   });
 
@@ -334,9 +269,10 @@
     const b = e.target.closest('.js-goto-catalog'); if (!b) return;
     e.preventDefault();
     Object.assign(state, { q: '', gender: b.dataset.gender || '', category: b.dataset.category || '', special: b.dataset.special || '', brand: '', family: '', size: '', shown: PAGE });
-    $('#searchInput').value = '';
+    $('#searchInput').value = ''; brandSelect.value = ''; familySelect.value = ''; sizeSelect.value = '';
     $$('.chip', genderChips).forEach(c => { const on = c.dataset.v === state.gender; c.classList.toggle('is-active', on); c.setAttribute('aria-pressed', String(on)); });
     $$('.chip', categoryChips).forEach(c => { const on = c.dataset.c === state.category && c.dataset.s === state.special; c.classList.toggle('is-active', on); c.setAttribute('aria-pressed', String(on)); });
+    syncFamilyChips();
     renderCatalog();
     $('#catalogo').scrollIntoView({ behavior: 'smooth' });
   });
@@ -440,7 +376,7 @@
   $('#year').textContent = new Date().getFullYear();
 
   /* ---------- scrollspy ligero ---------- */
-  const sections = ['inicio', 'mujer', 'hombre', 'arabes', 'disenador', 'catalogo', 'contacto'];
+  const sections = ['inicio', 'catalogo', 'contacto'];
   const navLinks = $$('.nav__links a');
   const spy = new IntersectionObserver(entries => {
     entries.forEach(en => {

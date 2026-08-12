@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 
   <script type="application/ld+json">
   {
@@ -51,11 +51,11 @@
       </a>
       <nav class="nav__links" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
-        <a href="#mujer">Mujer</a>
-        <a href="#hombre">Hombre</a>
-        <a href="#arabes">Árabes</a>
-        <a href="#disenador">Diseñador</a>
-        <a href="#catalogo">Catálogo</a>
+        <a href="#catalogo" class="js-goto-catalog" data-gender="mujer">Mujer</a>
+        <a href="#catalogo" class="js-goto-catalog" data-gender="hombre">Hombre</a>
+        <a href="#catalogo" class="js-goto-catalog" data-category="arabe">Árabes</a>
+        <a href="#catalogo" class="js-goto-catalog" data-category="disenador">Diseñador</a>
+        <a href="#catalogo" class="js-goto-catalog">Catálogo</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <div class="nav__actions">
@@ -72,12 +72,11 @@
 
   <!-- Menú móvil -->
   <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
-    <a href="#inicio">Inicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
-    <a href="#mujer">Perfumes para Mujer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
-    <a href="#hombre">Perfumes para Hombre <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
-    <a href="#arabes">Perfumes Árabes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
-    <a href="#disenador">Perfumes de Diseñador <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
-    <a href="#catalogo">Catálogo completo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
+    <a href="#catalogo" class="js-goto-catalog" data-gender="mujer">Perfumes para Mujer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
+    <a href="#catalogo" class="js-goto-catalog" data-gender="hombre">Perfumes para Hombre <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
+    <a href="#catalogo" class="js-goto-catalog" data-category="arabe">Perfumes Árabes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
+    <a href="#catalogo" class="js-goto-catalog" data-category="disenador">Perfumes de Diseñador <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
+    <a href="#catalogo" class="js-goto-catalog">Catálogo completo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
     <a href="#mayorista">Compra al por mayor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
     <a href="#contacto">Contacto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
     <a class="btn btn--wa js-wa" href="#" data-msg="general">
@@ -88,7 +87,7 @@
 
   <main id="main">
 
-    <!-- ================= HERO ================= -->
+    <!-- ================= HERO (compacto) ================= -->
     <section class="hero" id="inicio" aria-label="Portada">
       <div class="wrap hero__inner">
         <div class="hero__copy">
@@ -112,6 +111,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Amplio catálogo</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Atención personalizada</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Detal y por mayor</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Compra fácil por WhatsApp</li>
           </ul>
         </div>
         <div class="hero__stage" aria-hidden="true">
@@ -119,140 +119,19 @@
           <div class="hero__bottles" id="heroBottles"><!-- JS: 3 productos reales del catálogo --></div>
         </div>
       </div>
-      <a class="hero__scroll" href="#categorias" aria-label="Bajar a categorías">
+      <a class="hero__scroll" href="#catalogo" aria-label="Bajar al catálogo">
         <span class="hero__scroll-dot"></span>
         Descubre
       </a>
     </section>
 
-    <!-- ================= CATEGORÍAS ================= -->
-    <section class="section" id="categorias" aria-labelledby="catsTitle">
-      <div class="wrap">
-        <div class="center reveal">
-          <span class="kicker">Colecciones</span>
-          <h2 class="title" id="catsTitle">ENCUENTRA TU <em>AROMA</em></h2>
-          <p class="lead">Explora nuestras colecciones y encuentra la fragancia que se convierte en tu firma personal.</p>
-          <div class="gold-rule"></div>
-        </div>
-        <div class="cats reveal-stagger" id="catsGrid"><!-- JS --></div>
-      </div>
-    </section>
-
-    <!-- ================= DESTACADOS ================= -->
-    <section class="section section--alt" id="destacados" aria-labelledby="featTitle">
-      <div class="wrap">
-        <div class="center reveal">
-          <span class="kicker">Selección de la casa</span>
-          <h2 class="title" id="featTitle">LOS FAVORITOS DE NUESTRAS <em>CLIENTAS Y CLIENTES</em></h2>
-          <p class="lead">Referencias reconocidas de nuestro catálogo que enamoran a primera aplicación.</p>
-          <div class="gold-rule"></div>
-        </div>
-        <div class="grid grid--featured reveal-stagger" id="featGrid"><!-- JS --></div>
-        <div class="see-all reveal">
-          <a class="btn btn--outline" href="#catalogo">Ver toda la colección
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= MUJER ================= -->
-    <section class="section" id="mujer" aria-labelledby="womenTitle">
-      <div class="wrap">
-        <div class="gender-head reveal">
-          <div>
-            <span class="kicker">Para ella</span>
-            <h2 class="title" id="womenTitle">PERFUMES PARA <em>MUJER</em></h2>
-            <p class="lead">Fragancias delicadas, dulces y florales que dejan huella a su paso.</p>
-          </div>
-        </div>
-        <div class="chips" id="womenChips" role="group" aria-label="Filtrar perfumes de mujer por familia olfativa"><!-- JS --></div>
-        <div class="grid" id="womenGrid" aria-live="polite"><!-- JS --></div>
-        <div class="see-all reveal">
-          <button class="btn btn--gold js-goto-catalog" data-gender="mujer">Ver todos los de mujer
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= HOMBRE ================= -->
-    <section class="section section--champagne" id="hombre" aria-labelledby="menTitle">
-      <div class="wrap">
-        <div class="gender-head reveal">
-          <div>
-            <span class="kicker">Para él</span>
-            <h2 class="title" id="menTitle">PERFUMES PARA <em>HOMBRE</em></h2>
-            <p class="lead">Aromas sobrios, amaderados y elegantes con carácter propio.</p>
-          </div>
-        </div>
-        <div class="chips" id="menChips" role="group" aria-label="Filtrar perfumes de hombre por familia olfativa"><!-- JS --></div>
-        <div class="grid" id="menGrid" aria-live="polite"><!-- JS --></div>
-        <div class="see-all reveal">
-          <button class="btn btn--gold js-goto-catalog" data-gender="hombre">Ver todos los de hombre
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= ÁRABES ================= -->
-    <section class="section arab" id="arabes" aria-labelledby="arabTitle">
-      <div class="wrap">
-        <div class="center reveal">
-          <span class="kicker">Colección Capadocia · Octubre 2025</span>
-          <h2 class="title" id="arabTitle">EL MUNDO DE LA <em>PERFUMERÍA ÁRABE</em></h2>
-          <p class="lead">Descubre aromas intensos, sofisticados y memorables. Lattafa, Armaf, Afnan, Maison Alhambra y más.</p>
-          <div class="gold-rule"></div>
-        </div>
-        <div class="grid" id="arabGrid" aria-live="polite"><!-- JS --></div>
-        <div class="see-all reveal">
-          <button class="btn btn--outline js-goto-catalog" data-category="arabe">Ver todos los árabes
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= DISEÑADOR ================= -->
-    <section class="section" id="disenador" aria-labelledby="designerTitle">
-      <div class="wrap">
-        <div class="center reveal">
-          <span class="kicker">Casas de diseñador</span>
-          <h2 class="title" id="designerTitle">CLÁSICOS QUE NUNCA <em>PASAN DE MODA</em></h2>
-          <p class="lead">Paco Rabanne, Carolina Herrera, Hugo Boss, Chanel, Dior, Lacoste y las casas que definieron la perfumería.</p>
-          <div class="gold-rule"></div>
-        </div>
-        <div class="grid" id="designerGrid" aria-live="polite"><!-- JS --></div>
-        <div class="see-all reveal">
-          <button class="btn btn--gold js-goto-catalog" data-category="disenador">Ver todos los de diseñador
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PERSONALIDAD ================= -->
-    <section class="section section--alt" id="personalidad" aria-labelledby="moodTitle">
-      <div class="wrap">
-        <div class="center reveal">
-          <span class="kicker">Asistente de aroma</span>
-          <h2 class="title" id="moodTitle">¿NO SABES QUÉ <em>PERFUME ELEGIR?</em></h2>
-          <p class="lead">Elige el carácter que buscas y te mostramos las fragancias de nuestro catálogo que coinciden.</p>
-          <div class="gold-rule"></div>
-        </div>
-        <div class="mood-grid reveal-stagger" id="moodGrid" role="group" aria-label="Buscar por tipo de aroma"><!-- JS --></div>
-        <div class="grid" id="moodResults" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <!-- ================= CATÁLOGO COMPLETO ================= -->
+    <!-- ================= CATÁLOGO ÚNICO ================= -->
     <section class="section" id="catalogo" aria-labelledby="catalogTitle">
       <div class="wrap">
         <div class="center reveal">
           <span class="kicker">Catálogo completo</span>
           <h2 class="title" id="catalogTitle">DESCUBRE NUESTRA <em>COLECCIÓN</em></h2>
-          <p class="lead">Busca por nombre, marca o familia olfativa, y filtra hasta encontrar tu próximo perfume.</p>
+          <p class="lead">Elige para quién es, el carácter del aroma, o busca por nombre y marca.</p>
           <div class="gold-rule"></div>
         </div>
 
@@ -263,19 +142,25 @@
           <button class="btn btn--primary" type="submit">Buscar</button>
         </form>
 
+        <div class="filter-block reveal">
+          <span class="filters__label">¿Para quién?</span>
+          <div class="chips" id="genderChips" role="group" aria-label="Filtrar por género"></div>
+        </div>
+
+        <div class="filter-block reveal">
+          <span class="filters__label">Carácter del aroma</span>
+          <div class="chips" id="familyChips" role="group" aria-label="Filtrar por familia olfativa"></div>
+        </div>
+
         <div class="filters-toggle">
           <button class="filters-toggle__btn" id="filtersToggle" aria-expanded="false" aria-controls="filtersPanel">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M7 12h10M10 18h4"/></svg>
-            Filtros
+            Más filtros
           </button>
           <p class="result-count" id="resultCount" aria-live="polite"></p>
         </div>
 
         <div class="filters" id="filtersPanel">
-          <div class="filters__group">
-            <span class="filters__label">Género</span>
-            <div class="chips" id="genderChips" role="group" aria-label="Filtrar por género"></div>
-          </div>
           <div class="filters__group">
             <span class="filters__label">Colección</span>
             <div class="chips" id="categoryChips" role="group" aria-label="Filtrar por colección"></div>
@@ -320,13 +205,9 @@
         <div class="load-more">
           <button class="btn btn--outline" id="loadMore" hidden>Cargar más perfumes</button>
         </div>
-      </div>
-    </section>
 
-    <!-- ================= ASESORÍA ================= -->
-    <section class="section" id="asesoria" aria-labelledby="adviceTitle">
-      <div class="wrap">
-        <div class="advice reveal">
+        <!-- Asesoría compacta -->
+        <div class="advice reveal" id="asesoria" style="margin-top:56px;">
           <span class="kicker" style="color:#F7D8E7;">Asesoría personalizada</span>
           <h2 id="adviceTitle">ENCUENTRA EL PERFUME QUE <em style="font-style:italic;">HABLA DE TI</em></h2>
           <p>¿No sabes cuál elegir? Cuéntanos qué tipo de aroma buscas y te ayudamos a encontrar opciones que se adapten a tu estilo.</p>
@@ -386,79 +267,13 @@
       </div>
     </section>
 
-    <!-- ================= BENEFICIOS ================= -->
-    <section class="section" id="beneficios" aria-labelledby="benefitsTitle">
-      <div class="wrap">
-        <div class="center reveal">
-          <span class="kicker">Nuestra promesa</span>
-          <h2 class="title" id="benefitsTitle">¿POR QUÉ COMPRAR <em>CON NOSOTROS?</em></h2>
-          <div class="gold-rule"></div>
-        </div>
-        <div class="benefits reveal-stagger">
-          <article class="benefit">
-            <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M6 7l1.5 12.5a2 2 0 0 0 2 1.5h5a2 2 0 0 0 2-1.5L18 7M9 7V5a3 3 0 0 1 6 0v2"/></svg></span>
-            <div>
-              <h3>Amplio catálogo de fragancias</h3>
-              <p>Perfumes árabes, de diseñador, para mujer y para hombre en un solo lugar.</p>
-            </div>
-          </article>
-          <article class="benefit">
-            <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.6 5.4 5.4 0 0 1 21.3 12C19 16.4 12 21 12 21Z"/></svg></span>
-            <div>
-              <h3>Atención personalizada</h3>
-              <p>Te escuchamos y te ayudamos a elegir con calma, sin afanes.</p>
-            </div>
-          </article>
-          <article class="benefit">
-            <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg></span>
-            <div>
-              <h3>Compra fácil por WhatsApp</h3>
-              <p>Elige tu perfume y confírmalo en un mensaje. Así de simple.</p>
-            </div>
-          </article>
-          <article class="benefit">
-            <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9h18M5 9V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2M5 9l1 10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-10"/></svg></span>
-            <div>
-              <h3>Detal y por mayor</h3>
-              <p>Opciones para regalarte un perfume o para emprender con ellos.</p>
-            </div>
-          </article>
-          <article class="benefit">
-            <span class="benefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l2.5 5.5L20 9.3l-4 4 1 5.7-5-2.8-5 2.8 1-5.7-4-4 5.5-.8L12 3Z"/></svg></span>
-            <div>
-              <h3>Asesoría para tu aroma ideal</h3>
-              <p>Si no sabes cuál elegir, te guiamos según tu estilo y ocasión.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CTA FINAL ================= -->
-    <section class="section final-cta" id="cta-final" aria-labelledby="finalTitle">
-      <div class="wrap reveal">
-        <span class="kicker" style="justify-content:center;">Es tu momento</span>
-        <h2 class="title" id="finalTitle">TU PRÓXIMO AROMA TE ESTÁ <em>ESPERANDO</em></h2>
-        <p class="lead" style="margin-inline:auto;">Explora nuestra colección y encuentra una fragancia que deje huella.</p>
-        <div class="hero__ctas">
-          <a class="btn btn--primary" href="#catalogo">Ver catálogo
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn--wa js-wa" href="#" data-msg="general">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.2c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.4 1.3Z"/></svg>
-            Hablar por WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= CONTACTO ================= -->
     <section class="section" id="contacto" aria-labelledby="contactTitle">
       <div class="wrap">
         <div class="center reveal">
           <span class="kicker">Estamos para ti</span>
           <h2 class="title" id="contactTitle">CONTÁCTANOS</h2>
-          <p class="lead">Escríbenos y con gusto te atendemos.</p>
+          <p class="lead">Tu próximo aroma te está esperando. Escríbenos y con gusto te atendemos.</p>
           <div class="gold-rule"></div>
         </div>
         <div class="contact-grid reveal-stagger" id="contactGrid"><!-- JS --></div>
@@ -479,16 +294,16 @@
           <h4>Explorar</h4>
           <div class="footer__links">
             <a href="#inicio">Inicio</a>
-            <a href="#mujer">Mujer</a>
-            <a href="#hombre">Hombre</a>
-            <a href="#arabes">Árabes</a>
-            <a href="#disenador">Diseñador</a>
+            <a href="#catalogo" class="js-goto-catalog" data-gender="mujer">Mujer</a>
+            <a href="#catalogo" class="js-goto-catalog" data-gender="hombre">Hombre</a>
+            <a href="#catalogo" class="js-goto-catalog" data-category="arabe">Árabes</a>
+            <a href="#catalogo" class="js-goto-catalog" data-category="disenador">Diseñador</a>
           </div>
         </nav>
         <nav aria-label="Enlaces de compra">
           <h4>Comprar</h4>
           <div class="footer__links">
-            <a href="#catalogo">Catálogo</a>
+            <a href="#catalogo" class="js-goto-catalog">Catálogo</a>
             <a href="#mayorista">Al por mayor</a>
             <a href="#asesoria">Asesoría</a>
             <a href="#contacto">Contacto</a>
@@ -534,8 +349,8 @@
     </a>
   </div>
 
-  <script src="js/config.js"></script>
-  <script src="js/products.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/config.js?v=3"></script>
+  <script src="js/products.js?v=3"></script>
+  <script src="js/app.js?v=3"></script>
 </body>
 </html>
