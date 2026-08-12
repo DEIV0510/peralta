@@ -667,6 +667,11 @@ body.has-sticky-cta { padding-bottom: 76px; }
 .reveal-stagger > * { opacity: 0; transform: translateY(22px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
 .reveal-stagger.is-visible > * { opacity: 1; transform: none; }
 
+/* modo captura para screenshots automatizados (?captura) */
+html.is-captura { scroll-behavior: auto; }
+html.is-captura .hero { min-height: 0; padding-bottom: 80px; }
+html.is-captura .reveal, html.is-captura .reveal-stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

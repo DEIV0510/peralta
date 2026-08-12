@@ -1,0 +1,213 @@
+TOTAL transcritos: 423  ->  únicos: 301
+Con precio detal: 92  |  Sin precio: 209
+Imágenes ok: 301  |  fallidas: 0  |  sin imagen: 0
+Géneros: {"null":79,"hombre":126,"mujer":96}
+Categorías: {"arabe":100,"disenador":201}
+Familias: {"amaderado":60,"aromático":52,"acuático":11,"frutal":45,"floral":77,"fresco":6,"cuero":1,"anís":1,"especiado":23,"verde":2,"fougère":14,"cítrico":17,"ozónico":1,"oriental":11,"ámbar":5,"almizcle":2,"dulce":4,"vainilla":2}
+Marcas: {
+ "Armaf · Odyssey": 13,
+ "Lattafa": 37,
+ "Armaf": 16,
+ "Dumont": 2,
+ "Afnan": 4,
+ "Bharara": 4,
+ "Rasasi": 5,
+ "Lattafa · Rave": 2,
+ "???": 2,
+ "Orientica": 2,
+ "Al Haramain": 3,
+ "Maison Alhambra": 1,
+ "Victorinox": 3,
+ "Guess": 1,
+ "Calvin Klein": 10,
+ "Nautica": 2,
+ "Antonio Banderas": 1,
+ "Issey Miyake": 5,
+ "Ariana Grande": 2,
+ "Diesel": 3,
+ "Bvlgari": 9,
+ "Giorgio Armani": 5,
+ "Paco Rabanne": 23,
+ "Hugo Boss": 15,
+ "Cartier": 1,
+ "Montblanc": 6,
+ "Tommy Hilfiger": 3,
+ "Jean Paul Gaultier": 4,
+ "Chanel": 9,
+ "Carolina Herrera": 24,
+ "Dior": 7,
+ "Ralph Lauren": 5,
+ "Versace": 10,
+ "Valentino": 1,
+ "Roger & Gallet": 1,
+ "Dolce & Gabbana": 7,
+ "Lacoste": 13,
+ "Creed": 11,
+ "Azzaro": 1,
+ "Clinique": 1,
+ "Perry Ellis": 2,
+ "Juicy Couture": 1,
+ "Victoria's Secret": 3,
+ "Katy Perry": 3,
+ "Donna Karan": 2,
+ "Britney Spears": 2,
+ "Gucci": 1,
+ "Paris Hilton": 4,
+ "Lancôme": 3,
+ "Kenzo": 1,
+ "Nina Ricci": 1,
+ "Burberry": 1,
+ "Montale": 1,
+ "Givenchy": 2
+}
+
+--- FUSIONES (122) ---
+INVICTUS PLATINUM PACO RABANNE|  [general p2 <- general p5]
+360 PERRY ELLIS|100  [general p22 <- general p24]
+ONE MILLION LUCKY|100  [general p4 <- sarae p2]
+ONE MILLION|100  [general p4 <- sarae p2]
+INVICTUS|100  [general p4 <- sarae p3]
+INVICTUS INTENSE|100  [general p6 <- sarae p3]
+BLACK XS ANGELES|100  [general p6 <- sarae p3]
+BLACK XS TRADICIONAL|100  [general p6 <- sarae p3]
+BLACK XS L EXCES|100  [general p6 <- sarae p3]
+INVICTUS LEGEND|100  [general p6 <- sarae p4]
+PURE XS MEN|100  [general p8 <- sarae p4]
+CH MEN|100  [general p8 <- sarae p4]
+212 SEXY MEN|100  [general p7 <- sarae p4]
+212 MEN|100  [general p7 <- sarae p4]
+BAD BOY|100  [general p7 <- sarae p5]
+212 VIP WILD PARTY|100  [general p7 <- sarae p5]
+212 VIP MEN|100  [general p21 <- sarae p5]
+AZZARO WANTED|100  [general p21 <- sarae p5]
+CLINIQUE HAPPY|100  [general p21 <- sarae p5]
+HUGO BOSS SPORT|100  [general p2 <- sarae p6]
+HUGO BOSS BOTTLED|100  [general p2 <- sarae p6]
+HUGO BOSS UNLIMITED|100  [general p2 <- sarae p6]
+HUGO BOSS NIGHT|100  [general p2 <- sarae p6]
+HUGO BOSS JOURNEY|125  [general p14 <- sarae p7]
+HUGO BOSS RED|125  [general p14 <- sarae p7]
+HUGO BOSS THE SCENT|100  [general p14 <- sarae p7]
+HUGO BOSS TONIC|100  [general p13 <- sarae p7]
+LACOSTE BLUE|100  [general p13 <- sarae p8]
+LACOSTE ROUGE|100  [general p13 <- sarae p8]
+LACOSTE RED|100  [general p15 <- sarae p8]
+LACOSTE NOIR|100  [general p15 <- sarae p8]
+LACOSTE ENERGIZED|100  [general p15 <- sarae p8]
+LACOSTE BLANC|100  [general p15 <- sarae p9]
+LACOSTE ESSENTIAL|125  [general p15 <- sarae p9]
+ISSEY MIYAKE|125  [general p16 <- sarae p9]
+CREED MILLESIME IMPERIAL|100  [general p17 <- sarae p9]
+CREED SILVER MOUNTAIN|125  [general p17 <- sarae p9]
+CREED GREEN IRISH TWEED|100  [general p17 <- sarae p10]
+CREED VIKING|100  [general p17 <- sarae p10]
+CREED AVENTUS|125  [general p17 <- sarae p10]
+DIOR SAUVAGE|100  [general p9 <- sarae p10]
+DIOR FAHRENHEIT|100  [general p9 <- sarae p10]
+SWISS ARMY|100  [general p9 <- sarae p11]
+POLO BLUE|125  [general p9 <- sarae p11]
+POLO RED|125  [general p9 <- sarae p11]
+POLO BLACK|125  [general p18 <- sarae p11]
+CK ONE|100  [general p18 <- sarae p11]
+CK ETERNITY|100  [general p18 <- sarae p12]
+CK BE|100  [general p18 <- sarae p12]
+CK ONE SUMMER|100  [general p18 <- sarae p12]
+CK IN2U|100  [general p10 <- sarae p12]
+VERSACE DYLAN BLUE|100  [general p35 <- sarae p12]
+VERSACE EROS FLAME|100  [general p10 <- sarae p13]
+VERSACE MAN EAU FRAICHE|100  [general p20 <- sarae p13]
+VERSACE POUR HOMME|100  [general p20 <- sarae p13]
+D G KING|100  [general p20 <- sarae p13]
+D G LIGHT BLUE|125  [general p20 <- sarae p14]
+D G LIGHT BLUE ITALIAN ZEST|125  [general p20 <- sarae p14]
+JEAN PAUL ULTRA MALE|125  [general p3 <- sarae p14]
+JEAN PAUL LE MALE|125  [general p3 <- sarae p14]
+ACQUA DI GIO POUR HOME|100  [general p19 <- sarae p15]
+ACQUA DI GIO PROFUMO|100  [general p19 <- sarae p15]
+MONT BLANC EMBLEM|100  [general p19 <- sarae p15]
+MONT BLANC LEGEND|100  [general p19 <- sarae p15]
+CK ETERNITY|100  [general p18 <- sarae p16]
+MONT BLANC LEGEND SPIRIT|100  [general p5 <- sarae p16]
+BLEU DE CHANEL|100  [general p5 <- sarae p16]
+CHANEL ALLURE SPORT|100  [general p5 <- sarae p17]
+BVLGARI AQVA|100  [general p1 <- sarae p17]
+BVLGARI MAN IN BLACK|100  [general p4 <- sarae p17]
+360 PERRY ELLIS|100  [general p22 <- sarae p17]
+LADY MILLION|80  [general p29 <- sarae p18]
+OLYMPEA|80  [general p29 <- sarae p18]
+BLACK XS EXCESS|80  [general p29 <- sarae p18]
+PURE XS|80  [general p29 <- sarae p19]
+DONNA KARAN FRESH BLOSSOM|100  [general p26 <- sarae p19]
+CH|100  [general p26 <- sarae p19]
+212 SEXY|100  [general p38 <- sarae p20]
+212 VIP ROSE|80  [general p27 <- sarae p20]
+212 VIP|80  [general p28 <- sarae p20]
+212 NYC|100  [general p28 <- sarae p20]
+GOOD GIRL|80  [general p28 <- sarae p21]
+BAMBOO GUCCI|100  [general p30 <- sarae p21]
+HUGO BOSS WOMAN|100  [general p30 <- sarae p21]
+HUGO BOSS THE SCENT FOR HER|100  [general p30 <- sarae p21]
+LACOSTE TOUCK OF PINK|90  [general p30 <- sarae p21]
+LACOSTE SPARKLING|90  [general p30 <- sarae p22]
+LACOSTE PANACHE|90  [general p31 <- sarae p22]
+LACOSTE NATURAL|90  [general p31 <- sarae p22]
+LACOSTE ELEGANT|90  [general p31 <- sarae p22]
+FANTASY BRITNEY SPEARS|100  [general p31 <- sarae p22]
+DAZZLE PARIS HILTON|125  [general p32 <- sarae p23]
+ISSEY MIYAKE|100  [general p31 <- sarae p23]
+CAN CAN PARIS HILTON|100  [general p32 <- sarae p23]
+PARIS HILTON TRADICIONAL|100  [general p32 <- sarae p23]
+HEIRESS PARIS HILTON|100  [general p32 <- sarae p23]
+CREED LOVE IN WHITE|100  [general p33 <- sarae p24]
+CREED AVENTUS FOR HER|100  [general p33 <- sarae p24]
+SI GIORGIO ARMANI|100  [general p33 <- sarae p24]
+SI PASSIONE GIORGIO ARMANI|100  [general p33 <- sarae p24]
+POISON GIRL DIOR|100  [general p33 <- sarae p24]
+HYPNOTIC POISON DIOR|100  [general p34 <- sarae p25]
+DIOR JADORE|100  [general p34 <- sarae p25]
+DIOR JOY|100  [general p34 <- sarae p25]
+CALVIN KLEIN ETERNITY|100  [general p34 <- sarae p25]
+CALVIN KLEIN EUPHORIA|100  [general p34 <- sarae p26]
+CK IN2U HER|100  [general p35 <- sarae p26]
+VERSACE DYLAN BLUE|100  [general p35 <- sarae p26]
+VERSACE BRIGHT CRYSTAL|90  [general p35 <- sarae p26]
+LANCOME LA VIE EST BELLE|75  [general p35 <- sarae p26]
+D G LIGHT BLUE|100  [general p35 <- sarae p27]
+D G LIGHT BLUE ITALIAN ZEST|100  [general p23 <- sarae p27]
+D G THE ONE|100  [general p23 <- sarae p27]
+SCANDAL JEAN PAUL|80  [general p23 <- sarae p28]
+NO 5 CHANEL|100  [general p36 <- sarae p28]
+BVLGARI OMNIA CORAL|65  [general p36 <- sarae p28]
+BVLGARI OMNIA AMETHYSTE|65  [general p24 <- sarae p29]
+BVLGARI OMNIA CRYTALLINE|65  [general p24 <- sarae p29]
+360 PERRY ELLIS|100  [general p22 <- sarae p29]
+RALPH RALPH LAUREN|100  [general p24 <- sarae p29]
+LADY MILLION EMPIRE|80  [general p25 <- sarae p30]
+BURBERRY WOMEN BURBERRY|100  [general p37 <- sarae p30]
+
+--- PROBLEMAS (2) ---
+SIN MARCA: STALLION 53 (colombia p12)
+SIN MARCA: LIQUID BRUN (colombia p13)
+
+--- PÁGINAS INFO ---
+[colombia p1 cover] CAPADOCIA PERFUMES. Portada con logo y collage de frascos sobre pedestal dorado, fondo de seda crema. Sin más texto.
+[colombia p2 info] CAPADOCIA PERFUMES
+
+AQUI NUESTRAS OPCIONES DE COMPRA. ELIGE LA QUE MEJOR SE ADAPTE A TUS NECESIDADES:
+
+*Precios al Detal.
+
+*Precios al Mayor: A partir de 4 Unidades (surtidas).
+
+*Precios Distribuidor: A partir de 9 Unidades (surtidas).
+[colombia p3 cover] CAPADOCIA PERFUMES
+
+PERFUMES ÁRABES
+100% Originales
+
+(Portadilla interior con el mismo collage de frascos de la portada.)
+[colombia p14 cover] CAPADOCIA PERFUMES — PERFUMES DE DISEÑADOR — 100% Originales (portada de sección, sin productos ni precios; collage decorativo de frascos)
+[colombia p17 info] CAPADOCIA PERFUMES — TERMINOS Y CONDICIONES DE COMPRA
+
+1. TERMINOS DE ENTREGA: LAS ENTREGAS SE COORDINAN DE FORMA PERSONALIZADA, TOMANDO EN CUENTA LA DISPONIBILIDAD DE HORARIOS Y LA UBICACION DEL CLIENTE. EL COSTO DEL ENVIO A DOMICILIO VARIAS SEGUN LA ZONA Y CORRE POR CUENTA DEL COMPRADOR, A MENOS Q
+[sarae p1 cover] NUESTRO CATÁLOGO — LE PERFUM Saraé (logo). Barra de contacto: Facebook: Le Perfum Sarae · Instagram: sarae_perfumeria · WhatsApp: 301-2842814

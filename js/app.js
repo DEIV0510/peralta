@@ -11,6 +11,9 @@
   const $ = (sel, ctx) => (ctx || document).querySelector(sel);
   const $$ = (sel, ctx) => [...(ctx || document).querySelectorAll(sel)];
 
+  // modo captura (?captura): sin animaciones ni alturas de viewport — para screenshots/OG
+  if (new URLSearchParams(location.search).has('captura')) document.documentElement.classList.add('is-captura');
+
   /* ---------- utilidades ---------- */
   const norm = s => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   const money = v => v == null ? null : '$' + Number(v).toLocaleString('es-CO');
